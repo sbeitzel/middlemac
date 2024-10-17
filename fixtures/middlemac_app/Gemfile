@@ -24,15 +24,17 @@ gem 'middleman-targets', '~> 1.0.12'
 #######################################
 # Core gems
 #######################################
-gem 'middleman', '~> 4.3.7'
-gem 'middleman-core'
+gem 'middleman', ['~> 4.3', '>= 4.3.7']
 gem 'middleman-cli'
+gem 'middleman-compass'
+gem 'middleman-core'
 gem 'middleman-livereload' # Live-reloading plugin
 gem 'middleman-syntax'     # Syntax Highlighting
-gem 'middleman-compass'
 
 
 #######################################
 # Other gems
 #######################################
+gem 'haml', '~> 5.0' # Haml 6 introduces breaking changes, e.g. `Haml::Engine: Option :sort_order is invalid`
+gem 'rack', ['>= 1.4.5', '< 3'] # rack 3 winds up not being able to load files for middleman as of middleman 4.5.0 and 4.5.1
 gem 'tzinfo-data', platforms: [:mswin, :mingw] # Time zone data for Windows

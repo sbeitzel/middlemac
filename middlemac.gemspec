@@ -7,16 +7,14 @@ require 'middlemac/version'
 # I'm adjusting the minimum requirement to the first release incorporating
 # that change.
 
-mm_needed = ['~> 4.3.0', '>= 4.3.7']
+mm_needed = ['~> 4.3', '>= 4.3.7']
 
 # We should work with any 2.0 version of Ruby, but I'm no longer testing them
 # for regressions. Version 2.6.0 goes back to December 2018, and is a suitable
 # minimum version.
 #
-# Currently no released version of Middleman works with Ruby 3, so until that is
-# resolved, We will only support 2.6 up to and not including Ruby 3.0.
-
-rb_needed = ['~> 2.0', '>= 2.6']
+# Ruby 2 is EOL, but we have no idea what will happen beyond 3.x
+rb_needed = ['>= 2.6', '< 4']
 
 
 Gem::Specification.new do |s|
@@ -37,7 +35,7 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.extensions   << "ext/trie/extconf.rb"
   s.require_paths = ['lib']
-  
+
   # The version of middleman-core your extension depends on
   s.add_runtime_dependency('middleman-core', mm_needed)
 
@@ -47,7 +45,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'nokogiri'
   s.add_runtime_dependency 'words_counted'
   s.add_runtime_dependency 'rake-compiler'
-  
+
   # Development dependencies
   s.add_development_dependency 'middleman', mm_needed
   s.add_development_dependency 'bundler',   '>= 1.6'
