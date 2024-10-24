@@ -33,6 +33,13 @@ gem 'middleman-syntax'     # Syntax Highlighting
 #######################################
 # Other gems
 #######################################
+gem 'base64'
+gem 'bigdecimal'
+gem 'csv'
 gem 'haml', '~> 5.0' # Haml 6 introduces breaking changes, e.g. `Haml::Engine: Option :sort_order is invalid`
+gem 'logger'
+gem 'mutex_m'
+gem 'ostruct'
 gem 'rack', ['>= 1.4.5', '< 3'] # rack 3 winds up not being able to load files for middleman as of middleman 4.5.0 and 4.5.1
+gem 'rdoc'
 gem 'tzinfo-data', platforms: [:mswin, :mingw] # Time zone data for Windows
